@@ -72,7 +72,7 @@ chmod +x deploy-pages.sh
 ## 🔗 Connect
 
 - [LinkedIn](https://id.linkedin.com/in/editama/)
-- [Email](mailto:cp.editama@gmail.com)
+- [Email](mailto:emailkerjanya@duck.com)
 - [GitHub](https://github.com/amatide)
 - [Instagram](https://instagram.com/amatide_8)
 - [Portfolio Live](https://www.editama.my.id)
