@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editama Mufti Islahuddin | Health Information Professional & Tech Enthusiast</title>
+  <meta name="description" content="Portofolio profesional Editama Mufti Islahuddin - Health Information Professional, Tech Enthusiast, dan Digital Health Explorer dari Indonesia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Dark theme (default) */
+      --bg: #060d1a;
+      --bg2: #0a1628;
+      --bg3: #0f2140;
+      --bg-card: rgba(15,33,64,.6);
+      --bg-card-hover: rgba(22,45,86,.8);
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-muted: #475569;
+      --accent: #00d4ff;
+      --accent-dim: #0099bb;
+      --accent-glow: rgba(0,212,255,.18);
+      --accent-glow2: rgba(0,212,255,.08);
+      --accent2: #7c3aed;
+      --glass-bg: rgba(10,22,40,.75);
+      --glass-border: rgba(0,212,255,.12);
+      --glass-border-hover: rgba(0,212,255,.3);
+      --shadow: rgba(0,0,0,.4);
+      --navy: #0a1628;
+      --navy-mid: #0f2140;
+      --navy-light: #162d56;
+      --hero-grid-color: rgba(0,212,255,.04);
+      --nav-bg: rgba(6,13,26,.92);
+      --scrollbar-thumb: #0099bb;
+      --input-bg: rgba(0,0,0,.2);
+      --tag-bg: rgba(0,212,255,.07);
+      --tag-border: rgba(0,212,255,.12);
+      --timeline-line: rgba(0,212,255,.2);
+      --orb-color1: rgba(0,212,255,.2);
+      --orb-color2: rgba(124,58,237,.2);
+      --orb-border: rgba(0,212,255,.1);
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --bg2: #f1f5f9;
+      --bg3: #e2e8f0;
+      --bg-card: rgba(255,255,255,.8);
+      --bg-card-hover: rgba(255,255,255,.95);
+      --text: #0f2140;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent: #0077b6;
+      --accent-dim: #005f8f;
+      --accent-glow: rgba(0,119,182,.1);
+      --accent-glow2: rgba(0,119,182,.05);
+      --accent2: #6d28d9;
+      --glass-bg: rgba(255,255,255,.8);
+      --glass-border: rgba(0,119,182,.15);
+      --glass-border-hover: rgba(0,119,182,.3);
+      --shadow: rgba(15,33,64,.1);
+      --navy: #0a1628;
+      --navy-mid: #0f2140;
+      --navy-light: #162d56;
+      --hero-grid-color: rgba(0,119,182,.06);
+      --nav-bg: rgba(248,250,252,.92);
+      --scrollbar-thumb: #0077b6;
+      --input-bg: rgba(0,0,0,.04);
+      --tag-bg: rgba(0,119,182,.07);
+      --tag-border: rgba(0,119,182,.15);
+      --timeline-line: rgba(0,119,182,.2);
+      --orb-color1: rgba(0,119,182,.15);
+      --orb-color2: rgba(109,40,217,.1);
+      --orb-border: rgba(0,119,182,.15);
+    }
+
+    html { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; transition: background .3s, color .3s; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0%; transition: width .1s linear;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1rem 2rem; transition: background .3s, backdrop-filter .3s, box-shadow .3s;
+    }
+    nav.scrolled {
+      background: var(--nav-bg); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--glass-border), 0 4px 30px var(--shadow);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; letter-spacing: -.5px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: .4rem; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: .85rem;
+      font-weight: 500; padding: .4rem .75rem; border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color: var(--accent); background: var(--accent-glow2); }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent) !important; color: var(--bg) !important;
+      font-weight: 600 !important; padding: .4rem 1rem !important; border-radius: 8px !important;
+    }
+    .nav-cta:hover { opacity: .9; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 10px; padding: .4rem .6rem;
+      cursor: pointer; display: flex; align-items: center; gap: .3rem;
+      color: var(--text-muted); font-size: .8rem; font-family: 'Inter', sans-serif;
+      font-weight: 500; transition: all .25s;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle .icon { font-size: 1rem; line-height: 1; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text-muted); border-radius: 2px; transition: all .3s; }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: var(--nav-bg); backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text); text-decoration: none; font-size: 1.25rem; font-weight: 500; }
+    .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text); font-size: 2rem; cursor: pointer; }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center; overflow: hidden; padding-top: 70px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: var(--bg);
+    }
+    .hero-gradient {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, var(--accent-glow) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(124,58,237,.08) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 2;
+      background-image:
+        linear-gradient(var(--hero-grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hero-grid-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-particles { position: absolute; inset: 0; z-index: 3; overflow: hidden; }
+    .particle {
+      position: absolute; border-radius: 50%;
+      background: var(--accent); opacity: 0;
+      animation: floatParticle linear infinite;
+    }
+    @keyframes floatParticle {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: .5; }
+      90% { opacity: .25; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+    .hero-content {
+      position: relative; z-index: 10;
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      width: 100%; display: flex; align-items: center; gap: 4rem;
+    }
+    .hero-left { flex: 1; }
+    .hero-right {
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .hero-avatar {
+      width: 280px; height: 280px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--bg3), var(--bg2));
+      border: 3px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+      overflow: hidden;
+      box-shadow: 0 0 0 8px var(--glass-bg), 0 0 40px var(--accent-glow);
+      transition: all .3s;
+    }
+    .hero-avatar:hover { border-color: var(--accent); box-shadow: 0 0 0 8px var(--accent-glow2), 0 0 60px var(--accent-glow); }
+    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-avatar-placeholder {
+      font-size: 4rem; font-weight: 900; color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-avatar-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid var(--orb-border);
+      animation: spinSlow linear infinite;
+    }
+    .hero-avatar-ring:nth-child(1) { width: 340px; height: 340px; animation-duration: 20s; }
+    .hero-avatar-ring:nth-child(2) { width: 400px; height: 400px; animation-duration: 30s; animation-direction: reverse; }
+    @keyframes spinSlow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+    .avatar-glow {
+      position: absolute; width: 280px; height: 280px; border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(30px); z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px); border-radius: 50px; padding: .35rem 1rem .35rem .5rem; margin-bottom: 1.5rem;
+      font-size: .8rem; color: var(--accent); font-weight: 500;
+      animation: fadeSlideUp .6s ease both;
+    }
+    .hero-badge-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity:1;transform:scale(1); } 50% { opacity:.6;transform:scale(.85); } }
+    .hero-name {
+      font-size: clamp(2.5rem, 5.5vw, 3.8rem); font-weight: 900;
+      color: var(--text); line-height: 1.05; letter-spacing: -2px;
+      margin-bottom: 1.25rem;
+      animation: fadeSlideUp .6s .15s ease both;
+    }
+    .hero-name .accent { color: var(--accent); }
+    .hero-headline {
+      font-size: clamp(.95rem, 2vw, 1.15rem); font-weight: 500;
+      color: var(--accent); margin-bottom: 1rem;
+      animation: fadeSlideUp .6s .25s ease both;
+    }
+    .hero-desc {
+      max-width: 560px; font-size: 1rem; color: var(--text-secondary);
+      line-height: 1.8; margin-bottom: 2rem;
+      animation: fadeSlideUp .6s .35s ease both;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp .6s .45s ease both; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.75rem; border-radius: 12px;
+      font-weight: 600; font-size: .95rem; text-decoration: none;
+      transition: all .25s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); box-shadow: 0 0 20px var(--accent-glow); }
+    .btn-primary:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-secondary { background: var(--glass-bg); color: var(--text); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; animation: fadeSlideUp .6s .55s ease both; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+    .stat-label { font-size: .78rem; color: var(--text-muted); font-weight: 500; margin-top: .15rem; }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-indicator {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 10; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      animation: fadeSlideUp 1s 1s ease both;
+    }
+    .scroll-indicator span { font-size: .7rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+    .scroll-mouse {
+      width: 22px; height: 36px; border: 2px solid var(--text-muted);
+      border-radius: 11px; position: relative;
+    }
+    .scroll-mouse::after {
+      content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+      width: 3px; height: 8px; background: var(--accent); border-radius: 2px;
+      animation: scrollDot 2s ease-in-out infinite;
+    }
+    @keyframes scrollDot { 0%,100% { top: 6px; opacity: 1; } 50% { top: 18px; opacity: .3; } }
+
+    /* Sections */
+    section { padding: 6rem 2rem; position: relative; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .75rem;
+    }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800;
+      color: var(--text); letter-spacing: -1px; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .section-desc { color: var(--text-secondary); max-width: 580px; margin-bottom: 3.5rem; font-size: 1rem; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* About */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text p { color: var(--text-secondary); margin-bottom: 1.25rem; font-size: .975rem; }
+    .about-text p:last-child { color: var(--accent); font-weight: 500; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .highlight-card {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 14px; padding: 1.25rem;
+      transition: border-color .3s, transform .3s, background .3s;
+    }
+    .highlight-card:hover { border-color: var(--glass-border-hover); transform: translateY(-3px); }
+    .highlight-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .highlight-card h4 { font-size: .875rem; font-weight: 600; color: var(--text); margin-bottom: .25rem; }
+    .highlight-card p { font-size: .775rem; color: var(--text-muted); }
+    .about-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+    .about-orb {
+      width: 280px; height: 280px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--orb-color1), transparent 60%),
+                  radial-gradient(circle at 70% 70%, var(--orb-color2), transparent 60%),
+                  var(--bg3);
+      border: 1px solid var(--orb-border);
+      display: flex; align-items: center; justify-content: center; position: relative;
+      box-shadow: 0 0 60px var(--accent-glow);
+    }
+    .about-orb::before {
+      content: 'EMI'; position: absolute;
+      font-size: 3.5rem; font-weight: 900; color: var(--accent-glow);
+      font-family: 'JetBrains Mono', monospace; letter-spacing: -3px;
+    }
+    .about-orb-ring { position: absolute; border-radius: 50%; border: 1px solid var(--orb-border); animation: spinSlow linear infinite; }
+    .about-orb-ring:nth-child(1) { width: 350px; height: 350px; animation-duration: 20s; }
+    .about-orb-ring:nth-child(2) { width: 420px; height: 420px; animation-duration: 30s; animation-direction: reverse; }
+
+    /* Experience */
+    #experience { background: var(--bg); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--timeline-line), transparent);
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -2rem; top: .35rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .timeline-item:hover::before { background: var(--accent); }
+    .timeline-date { font-size: .75rem; font-weight: 600; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-bottom: .4rem; }
+    .timeline-role { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: .25rem; }
+    .timeline-company { font-size: .875rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 500; }
+    .timeline-points { list-style: none; }
+    .timeline-points li { position: relative; padding-left: 1.25rem; margin-bottom: .5rem; font-size: .875rem; color: var(--text-secondary); }
+    .timeline-points li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-dim); }
+
+    /* Education */
+    #education { background: var(--bg2); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .edu-card {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 18px; padding: 2rem;
+      transition: border-color .3s, transform .3s, box-shadow .3s, background .3s;
+      backdrop-filter: blur(10px);
+    }
+    .edu-card:hover { border-color: var(--glass-border-hover); transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow); }
+    .edu-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .edu-degree { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: .4rem; }
+    .edu-school { font-size: .875rem; color: var(--accent); font-weight: 500; margin-bottom: .25rem; }
+    .edu-desc { font-size: .8rem; color: var(--text-muted); }
+    .edu-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+    .edu-tag {
+      background: var(--tag-bg); border: 1px solid var(--tag-border);
+      color: var(--accent-dim); padding: .2rem .6rem; border-radius: 6px; font-size: .7rem; font-weight: 500;
+    }
+
+    /* Skills */
+    #skills { background: var(--bg); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+    .skill-card {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 16px; padding: 1.5rem;
+      transition: border-color .3s, transform .3s, background .3s;
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      backdrop-filter: blur(10px);
+    }
+    .skill-card:hover { border-color: var(--glass-border-hover); transform: translateY(-3px); }
+    .skill-icon-wrap {
+      width: 48px; height: 48px; min-width: 48px; border-radius: 12px;
+      background: var(--accent-glow2); border: 1px solid var(--tag-border);
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .skill-info h4 { font-size: .95rem; font-weight: 600; color: var(--text); margin-bottom: .3rem; }
+    .skill-info p { font-size: .775rem; color: var(--text-muted); line-height: 1.5; margin-bottom: .75rem; }
+    .skill-bar { height: 4px; background: var(--accent-glow2); border-radius: 2px; overflow: hidden; }
+    .skill-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 1.2s cubic-bezier(.22,1,.36,1); width: 0;
+    }
+    .skill-fill.animated { width: var(--w); }
+
+    /* Tech */
+    #tech { background: var(--bg2); overflow: hidden; }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+    .tech-card {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 16px; padding: 1.5rem;
+      transition: border-color .3s, transform .3s, box-shadow .3s, background .3s;
+      position: relative; overflow: hidden; backdrop-filter: blur(10px);
+    }
+    .tech-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0; transition: opacity .3s;
+    }
+    .tech-card:hover::before { opacity: 1; }
+    .tech-card:hover { border-color: var(--glass-border-hover); transform: translateY(-4px); box-shadow: 0 20px 40px var(--shadow); }
+    .tech-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .tech-card h4 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: .4rem; }
+    .tech-card p { font-size: .8rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Projects */
+    #projects { background: var(--bg); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 18px; overflow: hidden;
+      transition: border-color .3s, transform .3s, box-shadow .3s, background .3s;
+      backdrop-filter: blur(10px);
+    }
+    .project-card:hover { border-color: var(--glass-border-hover); transform: translateY(-5px); box-shadow: 0 20px 50px var(--shadow); }
+    .project-thumb {
+      height: 180px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--bg3), var(--bg2));
+    }
+    .project-thumb-inner {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, var(--accent-glow) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 50%, rgba(124,58,237,.1) 0%, transparent 50%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-thumb-icon { font-size: 3rem; opacity: .7; }
+    .project-body { padding: 1.5rem; }
+    .project-body h4 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: .5rem; }
+    .project-body p { font-size: .825rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }
+    .project-tag {
+      background: var(--tag-bg); border: 1px solid var(--tag-border);
+      color: var(--accent-dim); padding: .2rem .6rem; border-radius: 6px; font-size: .7rem; font-weight: 500;
+    }
+    .project-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: var(--accent); font-size: .825rem; font-weight: 600;
+      text-decoration: none; transition: gap .2s;
+    }
+    .project-link:hover { gap: .7rem; }
+    .project-link::after { content: '→'; }
+
+    /* Contact */
+    #contact { background: var(--bg2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+    .contact-info p { color: var(--text-secondary); font-size: .925rem; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link-item {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 14px; padding: 1rem 1.25rem;
+      text-decoration: none; transition: border-color .3s, transform .3s, background .3s;
+      backdrop-filter: blur(10px);
+    }
+    .contact-link-item:hover { border-color: var(--glass-border-hover); transform: translateX(5px); }
+    .contact-link-icon { font-size: 1.3rem; }
+    .contact-link-text span { display: block; font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    .contact-link-text strong { font-size: .925rem; color: var(--text); }
+    .contact-form {
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      border-radius: 20px; padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: .4rem; text-transform: uppercase; letter-spacing: .5px; }
+    .form-group input, .form-group textarea {
+      width: 100%; background: var(--input-bg); border: 1px solid var(--glass-border);
+      border-radius: 10px; padding: .75rem 1rem; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: .925rem;
+      transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow2); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%; background: var(--accent); color: var(--bg);
+      border: none; border-radius: 12px; padding: .85rem;
+      font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 700;
+      cursor: pointer; transition: all .25s; box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .form-submit:hover { opacity: .9; transform: translateY(-2px); }
+    .form-note { font-size: .75rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
+
+    /* Footer */
+    footer { background: var(--bg); border-top: 1px solid var(--glass-border); padding: 3rem 2rem; text-align: center; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-logo { font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: .5rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-tagline { color: var(--text-muted); font-size: .825rem; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: .875rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: .775rem; color: var(--text-muted); }
+
+    /* Back to top */
+    #back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--bg-card); border: 1px solid var(--glass-border);
+      color: var(--accent); font-size: 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; opacity: 0; transform: translateY(20px);
+      transition: all .3s; backdrop-filter: blur(10px);
+    }
+    #back-to-top.visible { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content { flex-direction: column-reverse; text-align: center; gap: 2.5rem; }
+      .hero-desc { margin: 0 auto 2rem; }
+      .hero-buttons { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-right { margin-top: 1rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-visual { order: -1; }
+      .about-orb { width: 200px; height: 200px; }
+      .about-orb-ring:nth-child(1) { width: 250px; height: 250px; }
+      .about-orb-ring:nth-child(2) { width: 300px; height: 300px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.75rem; }
+      .hero-avatar { width: 220px; height: 220px; }
+      .hero-avatar-ring:nth-child(1) { width: 280px; height: 280px; }
+      .hero-avatar-ring:nth-child(2) { width: 340px; height: 340px; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 4rem 1.25rem; }
+      .hero-name { letter-spacing: -1px; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">EMI<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#tech">Tech</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#education" class="mobile-link">Education</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#tech" class="mobile-link">Tech</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <button class="theme-toggle" id="themeToggleMobile" style="margin-top:.5rem;">
+    <span class="icon" id="themeIconM">🌙</span>
+    <span id="themeLabelM">Dark Mode</span>
+  </button>
+</div>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Available for opportunities
+      </div>
+      <h1 class="hero-name">Editama<br/>Mufti <span class="accent">Islahuddin</span></h1>
+      <p class="hero-headline">Health Information Professional · Tech Enthusiast · Digital Health Explorer</p>
+      <p class="hero-desc">Profesional di bidang Rekam Medis dan Informasi Kesehatan dengan ketertarikan pada teknologi, digitalisasi layanan kesehatan, dan inovasi sistem informasi modern.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years in Healthcare</div>
+        </div>
+        <div>
+          <div class="stat-num">D3</div>
+          <div class="stat-label">Rekam Medis & Info Kes</div>
+        </div>
+        <div>
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Learning Mindset</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-avatar" id="heroAvatar">
+        <div class="hero-avatar-ring"></div>
+        <div class="hero-avatar-ring"></div>
+        <div class="avatar-glow"></div>
+        <!-- Ganti dengan foto kamu: letakkan file foto di folder portfolio, lalu ubah URL berikut -->
+        <img src="photo.jpg" alt="Editama Mufti Islahuddin"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+             style="display:none;" />
+        <div class="hero-avatar-placeholder" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%;">EMI</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Profesional di Persimpangan<br/>Healthcare & Technology</h2>
+        <p>Berpengalaman di bidang rekam medis dan layanan kesehatan dengan pemahaman mendalam tentang pengelolaan data pasien, dokumentasi medis, dan sistem informasi kesehatan.</p>
+        <p>Saat ini berperan dalam pengelolaan layanan kesehatan di Puskesmas Tersono, sebelumnya dipercaya sebagai Medical Record Coder di Hermina Hospital Group — dua institusi dengan karakteristik dan tantangan yang berbeda namun saling melengkapi dalam membangun fondasi profesional yang kuat.</p>
+        <p>Tertarik pada digital transformation di bidang healthcare, terus mengeksplorasi tools digital modern, dan mengikuti perkembangan AI serta sistem informasi kesehatan untuk menciptakan layanan yang lebih efektif dan terintegrasi.</p>
+        <p>Sebagai seorang tech enthusiast, saya percaya teknologi dapat membantu menciptakan layanan kesehatan yang lebih efektif, modern, dan terintegrasi.</p>
+      </div>
+      <div class="about-visual reveal reveal-delay-2" style="position:relative;">
+        <div class="about-orb">
+          <div class="about-orb-ring"></div>
+          <div class="about-orb-ring"></div>
+        </div>
+        <div class="about-highlights" style="position:absolute; width:100%; padding:0 1rem;">
+          <div class="highlight-card" style="margin-top:2rem;">
+            <div class="highlight-icon">🏥</div>
+            <h4>Healthcare</h4>
+            <p>Rekam medis & layanan kesehatan</p>
+          </div>
+          <div class="highlight-card" style="margin-top:2rem;">
+            <div class="highlight-icon">💡</div>
+            <h4>Innovation</h4>
+            <p>Digital health & AI exploration</p>
+          </div>
+          <div class="highlight-card" style="margin-top:-1rem;">
+            <div class="highlight-icon">⚙️</div>
+            <h4>Tech-Savvy</h4>
+            <p>Tools modern & automation</p>
+          </div>
+          <div class="highlight-card" style="margin-top:-1rem;">
+            <div class="highlight-icon">📊</div>
+            <h4>Data-Driven</h4>
+            <p>Sistem informasi kesehatan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Pengalaman</div>
+      <h2 class="section-title">Pengalaman Profesional</h2>
+      <p class="section-desc">Jalur karir di bidang rekam medis dan administrasi kesehatan yang terus berkembang.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Juni 2025 — Sekarang</div>
+        <h3 class="timeline-role">Pengelola Layanan Kesehatan</h3>
+        <p class="timeline-company">Puskesmas Tersono — PNS</p>
+        <ul class="timeline-points">
+          <li>Mengelola dan mengkoordinasikan layanan kesehatan primer di tingkat puskesmas</li>
+          <li>Mengoordinasikan tim medis dan non-medis untuk kelancaran layanan harian</li>
+          <li>Mengoptimalkan sistem administrasi dan dokumentasi medis untuk efisiensi operasional</li>
+          <li>Memastikan kualitas layanan kesehatan dan kepatuhan terhadap standar prosedur</li>
+          <li>Menerapkan improvements pada sistem informasi dan manajemen data kesehatan</li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date">Februari 2022 — Mei 2025</div>
+        <h3 class="timeline-role">Medical Record Coder</h3>
+        <p class="timeline-company">Hermina Hospital Group — Pekalongan</p>
+        <ul class="timeline-points">
+          <li>Melakukan coding dan kategorisasi data rekam medis sesuai standar ICD-10</li>
+          <li>Memastikan akurasi dan kelengkapan dokumentasi medis pasien</li>
+          <li>Bekerja sama dengan tim medis untuk validasi data dan informasi kesehatan</li>
+          <li>Mengelola database rekam medis elektronik dengan standar kerahasiaan tinggi</li>
+          <li>Berperan dalam proses digitalisasi arsip dan transisi ke sistem EMR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Pendidikan</h2>
+      <p class="section-desc">Fondasi akademis di bidang kesehatan dan informasi.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <h3 class="edu-degree">D3 Rekam Medis dan Informasi Kesehatan</h3>
+        <p class="edu-school">Poltekkes Kemenkes Semarang</p>
+        <p class="edu-desc">Pendidikan profesional di bidang manajemen rekam medis, sistem informasi kesehatan, coding ICD-10, etika kedokteran, dan administrasi layanan kesehatan.</p>
+        <div class="edu-tags">
+          <span class="edu-tag">Rekam Medis</span>
+          <span class="edu-tag">ICD-10</span>
+          <span class="edu-tag">Sistem Info Kes</span>
+          <span class="edu-tag">Administrasi</span>
+        </div>
+      </div>
+      <div class="edu-card reveal reveal-delay-1">
+        <div class="edu-icon">📚</div>
+        <h3 class="edu-degree">Continuous Learning</h3>
+        <p class="edu-school">Self-Directed & Professional Development</p>
+        <p class="edu-desc">Terus memperbarui pengetahuan melalui kursus online, sertifikasi profesional, dan eksplorasi mandiri di bidang digital health, AI tools, dan teknologi informasi kesehatan.</p>
+        <div class="edu-tags">
+          <span class="edu-tag">Digital Health</span>
+          <span class="edu-tag">AI & Automation</span>
+          <span class="edu-tag">Health Informatics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">Keterampilan</h2>
+      <p class="section-desc">Kombinasi kemampuan klinis dan teknis yang terus berkembang.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap">📋</div>
+        <div class="skill-info">
+          <h4>Medical Records Management</h4>
+          <p>Pengelolaan, pengarsipan, dan retrieval dokumen rekam medis pasien sesuai standar.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 92%"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon-wrap">🗄️</div>
+        <div class="skill-info">
+          <h4>Health Information Systems</h4>
+          <p>Pengoperasian dan pengelolaan sistem informasi kesehatan berbasis digital dan EMR.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 88%"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon-wrap">🏨</div>
+        <div class="skill-info">
+          <h4>Healthcare Administration</h4>
+          <p>Administrasi layanan kesehatan, manajemen data pasien, dan koordinasi tim medis.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 85%"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon-wrap">📄</div>
+        <div class="skill-info">
+          <h4>Digital Documentation</h4>
+          <p>Digitalisasi dokumen fisik, transisi ke EMR, dan standardisasi format digital.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 80%"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon-wrap">📊</div>
+        <div class="skill-info">
+          <h4>Data Management</h4>
+          <p>Organisasi, validasi, dan analisis data kesehatan untuk pengambilan keputusan.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 87%"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-icon-wrap">🤖</div>
+        <div class="skill-info">
+          <h4>AI & Automation Enthusiast</h4>
+          <p>Explorasi AI tools, otomatisasi proses, dan penerapan teknologi modern di healthcare.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech -->
+<section id="tech">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Innovation</div>
+      <h2 class="section-title">Technology & Digital Innovation</h2>
+      <p class="section-desc">Ketertarikan pada integrasi teknologi modern di sektor kesehatan.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card reveal">
+        <div class="tech-icon">🧠</div>
+        <h4>AI & Machine Learning</h4>
+        <p>Menjelajahi potensi AI dalam diagnosis, prediksi epidemiologi, dan asisten virtual di layanan kesehatan.</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-1">
+        <div class="tech-icon">🏥</div>
+        <h4>Digital Health Transformation</h4>
+        <p>Berkontribusi dalam transisi layanan kesehatan dari sistem manual ke platform digital terintegrasi.</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-2">
+        <div class="tech-icon">💻</div>
+        <h4>Health Information Systems</h4>
+        <p>Mendalami sistem informasi rumah sakit, puskesmas, dan platform telemedicine.</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-1">
+        <div class="tech-icon">⚡</div>
+        <h4>Automation Tools</h4>
+        <p>Mengeksplorasi tools otomatisasi untuk efisiensi dokumentasi, reporting, dan workflow.</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-2">
+        <div class="tech-icon">🚀</div>
+        <h4>Modern Productivity Tools</h4>
+        <p>Terus mengadopsi tools modern seperti AI assistants, collaboration platforms, dan digital workspace.</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-3">
+        <div class="tech-icon">📈</div>
+        <h4>Continuous Learning</h4>
+        <p>Mindset belajar berkelanjutan — mengikuti perkembangan teknologi kesehatan global dan lokal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Proyek & Inisiatif</h2>
+      <p class="section-desc">Berbagai inisiatif dan proyek di bidang rekam medis dan digitalisasi kesehatan.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="project-thumb-icon">🏥</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h4>EMR Migration System</h4>
+          <p>Berperan dalam proses transisi dari sistem rekam medis manual ke Electronic Medical Record (EMR) di lingkungan rumah sakit, termasuk validasi data dan pelatihan staff.</p>
+          <div class="project-tags">
+            <span class="project-tag">EMR</span>
+            <span class="project-tag">Digitalisasi</span>
+            <span class="project-tag">Healthcare IT</span>
+          </div>
+          <a href="#contact" class="project-link">Detail Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="project-thumb-icon">📊</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h4>Healthcare Data Dashboard</h4>
+          <p>Pengembangan dashboard untuk monitoring data layanan kesehatan — mencakup statistik pasien, tingkat kunjungan, dan analisis tren bulanan untuk pengambilan keputusan.</p>
+          <div class="project-tags">
+            <span class="project-tag">Data Visualization</span>
+            <span class="project-tag">Reporting</span>
+            <span class="project-tag">Analytics</span>
+          </div>
+          <a href="#contact" class="project-link">Detail Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="project-thumb-icon">⚙️</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h4>Workflow Automation</h4>
+          <p>Menerapkan otomatisasi pada proses dokumentasi dan reporting rekam medis untuk mengurangi waktu processing dan meminimalkan kesalahan manusia dalam penginputan data.</p>
+          <div class="project-tags">
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">Efficiency</span>
+            <span class="project-tag">Process Improvement</span>
+          </div>
+          <a href="#contact" class="project-link">Detail Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-desc">Tertarik untuk berdiskusi tentang digital health, kolaborasi, atau kesempatan profesional? Silakan hubungi saya.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Get in Touch</h3>
+        <p>Saya terbuka untuk diskusi tentang inovasi di bidang kesehatan, teknologi, dan kesempatan profesional yang sejalan dengan passion saya di intersection healthcare dan teknologi.</p>
+        <div class="contact-links">
+          <a href="https://id.linkedin.com/in/editama/" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-text">
+              <span>LinkedIn</span>
+              <strong>id.linkedin.com/in/editama</strong>
+            </div>
+          </a>
+          <a href="mailto:cp.editama@gmail.com" class="contact-link-item">
+            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-text">
+              <span>Email</span>
+              <strong>cp.editama@gmail.com</strong>
+            </div>
+          </a>
+          <a href="https://instagram.com/amatide_8" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-link-icon">📸</div>
+            <div class="contact-link-text">
+              <span>Instagram</span>
+              <strong>@amatide_8</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-2">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nama</label>
+              <input type="text" id="name" name="name" placeholder="Nama lengkap" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subjek</label>
+            <input type="text" id="subject" name="subject" placeholder="Topik diskusi" />
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" placeholder="Tulis pesan atau pertanyaan Anda..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Kirim Pesan →</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">EMI<span>.</span></div>
+    <p class="footer-tagline">Health Information Professional · Tech Enthusiast · Digital Health Explorer</p>
+    <div class="footer-links">
+      <a href="https://id.linkedin.com/in/editama/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/amatide_8" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:cp.editama@gmail.com">Email</a>
+    </div>
+    <p class="footer-copy">© 2024 Editama Mufti Islahuddin. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+// Theme toggle
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  const icon = theme === 'dark' ? '🌙' : '☀️';
+  const label = theme === 'dark' ? 'Dark' : 'Light';
+  document.getElementById('themeIcon').textContent = icon;
+  document.getElementById('themeLabel').textContent = label;
+  document.getElementById('themeIconM').textContent = icon;
+  document.getElementById('themeLabelM').textContent = (theme === 'dark' ? 'Dark' : 'Light') + ' Mode';
+}
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+document.getElementById('themeToggleMobile').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// Restore saved theme
+const saved = localStorage.getItem('theme');
+if (saved) setTheme(saved);
+else {
+  // Detect prefers-color-scheme
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(prefersDark ? 'dark' : 'light');
+}
+
+// Particles
+const particleContainer = document.getElementById('particles');
+const particleCount = 40;
+for (let i = 0; i < particleCount; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 4 + 2;
+  p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*10}s;`;
+  particleContainer.appendChild(p);
+}
+
+// Scroll progress
+const progressBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+}, { passive: true });
+
+// Navbar
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 600);
+}, { passive: true });
+
+// Mobile menu
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('mobileClose').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.remove('open');
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: .15, rootMargin: '0px 0px -50px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Skill bar animation
+const skillBars = document.querySelectorAll('.skill-fill');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animated'); });
+}, { threshold: .5 });
+skillBars.forEach(bar => skillObserver.observe(bar));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta):not(:has(#themeToggle))');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+
+// Contact form
+function handleSubmit(e) {
+  e.preventDefault();
+  const note = document.getElementById('formNote');
+  note.textContent = '✅ Pesan berhasil terkirim! Saya akan segera merespons.';
+  note.style.color = 'var(--accent)';
+  e.target.reset();
+  setTimeout(() => { note.textContent = ''; }, 5000);
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
