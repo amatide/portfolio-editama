@@ -578,12 +578,16 @@
     }
 
     /* ========== SCROLL ANIMATION ========== */
+    /* Sections hidden initially to prevent flash; revealed by JS */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
+    }
+    /* JS adds this class AFTER page load → safe, no flash */
+    body.reveal-ready .reveal {
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     }
-    .reveal.visible {
+    body.reveal-ready .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1173,6 +1177,9 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Enable transitions AFTER page load (prevents flash of hidden content)
+document.body.classList.add('reveal-ready');
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
