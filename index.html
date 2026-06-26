@@ -576,25 +576,6 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
-
-    /* ========== SCROLL ANIMATION ========== */
-    /* Sections hidden initially to prevent flash; revealed by JS */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    /* JS adds this class AFTER page load → safe, no flash */
-    body.reveal-ready .reveal {
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    body.reveal-ready .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    /* ========== END SCROLL ANIMATION ========== */
   </style>
 </head>
 <body>
@@ -694,10 +675,10 @@
 </section>
 
 <!-- About -->
-<section id="about" class="reveal">
+<section id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-text reveal">
+      <div class="about-text">
         <div class="section-label">About Me</div>
         <h2 class="section-title">Profesional di Persimpangan<br/>Healthcare & Technology</h2>
         <p>Berpengalaman di bidang rekam medis dan layanan kesehatan dengan pemahaman mendalam tentang pengelolaan data pasien, dokumentasi medis, dan sistem informasi kesehatan.</p>
@@ -738,9 +719,9 @@
 </section>
 
 <!-- Experience -->
-<section id="experience" class="reveal">
+<section id="experience>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Pengalaman</div>
       <h2 class="section-title">Pengalaman Profesional</h2>
       <p class="section-desc">Jalur karir di bidang rekam medis dan administrasi kesehatan yang terus berkembang.</p>
@@ -775,9 +756,9 @@
 </section>
 
 <!-- Education -->
-<section id="education" class="reveal">
+<section id="education>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Education</div>
       <h2 class="section-title">Pendidikan</h2>
       <p class="section-desc">Fondasi akademis di bidang kesehatan dan informasi.</p>
@@ -811,9 +792,9 @@
 </section>
 
 <!-- Skills -->
-<section id="skills" class="reveal">
+<section id="skills>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Skills</div>
       <h2 class="section-title">Keterampilan</h2>
       <p class="section-desc">Kombinasi kemampuan klinis dan teknis yang terus berkembang.</p>
@@ -872,9 +853,9 @@
 </section>
 
 <!-- Tech -->
-<section id="tech" class="reveal">
+<section id="tech>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Innovation</div>
       <h2 class="section-title">Technology & Digital Innovation</h2>
       <p class="section-desc">Ketertarikan pada integrasi teknologi modern di sektor kesehatan.</p>
@@ -915,9 +896,9 @@
 </section>
 
 <!-- Projects -->
-<section id="projects" class="reveal">
+<section id="projects>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Proyek & Inisiatif</h2>
       <p class="section-desc">Berbagai inisiatif dan proyek di bidang rekam medis dan digitalisasi kesehatan.</p>
@@ -979,9 +960,9 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="reveal">
+<section id="contact>
   <div class="section-inner">
-    <div class="reveal">
+    <div class="">
       <div class="section-label">Contact</div>
       <h2 class="section-title">Let's Connect</h2>
       <p class="section-desc">Tertarik untuk berdiskusi tentang digital health, kolaborasi, atau kesempatan profesional? Silakan hubungi saya.</p>
@@ -1166,20 +1147,6 @@ if (form) {
     form.reset();
   });
 }
-
-// Scroll Reveal Animation
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Enable transitions AFTER page load (prevents flash of hidden content)
-document.body.classList.add('reveal-ready');
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
