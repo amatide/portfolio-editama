@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Editama</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --bg: #060d1a;
+      --bg2: #0a1628;
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --accent: #00d4ff;
+      --accent-glow: rgba(0,212,255,.18);
+      --glass-bg: rgba(10,22,40,.75);
+      --glass-border: rgba(0,212,255,.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated background orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 400px; height: 400px;
+      background: rgba(0,212,255,.15);
+      top: -100px; right: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 300px; height: 300px;
+      background: rgba(124,58,237,.15);
+      bottom: -80px; left: -80px;
+      animation-delay: -4s;
+      animation-direction: reverse;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+    }
+
+    /* Grid background */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Content */
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #00d4ff, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 80px rgba(0,212,255,.3);
+      margin-bottom: 1rem;
+      animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% { transform: translate(0); }
+      92% { transform: translate(-2px, 1px); }
+      94% { transform: translate(2px, -1px); }
+      96% { transform: translate(-1px, 2px); }
+      98% { transform: translate(1px, -2px); }
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .75rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: all .3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      margin-left: .75rem;
+    }
+    .btn-outline:hover {
+      background: var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Scanning line effect */
+    .scanline {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: scan 4s linear infinite;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0% { top: 0; }
+      100% { top: 100vh; }
+    }
+
+    /* Floating icons */
+    .icon-float {
+      position: fixed;
+      font-size: 1.2rem;
+      opacity: 0.08;
+      animation: floatIcon 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .icon-float:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+    .icon-float:nth-child(2) { top: 25%; right: 10%; animation-delay: -1s; font-size: 1.5rem; }
+    .icon-float:nth-child(3) { bottom: 30%; left: 5%; animation-delay: -2s; }
+    .icon-float:nth-child(4) { bottom: 20%; right: 8%; animation-delay: -3s; font-size: 1rem; }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    @media (max-width: 480px) {
+      .error-code { font-size: 6rem; }
+      .btn-outline { margin-left: 0; margin-top: .75rem; display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- Floating decoration icons -->
+  <div class="icon-float">🔍</div>
+  <div class="icon-float">⚠️</div>
+  <div class="icon-float">❓</div>
+  <div class="icon-float">💨</div>
+
+  <div class="container">
+    <div class="error-code">404</div>
+
+    <div class="glass-card">
+      <h1>Halaman Tidak Ditemukan</h1>
+      <p>
+        Sepertinya halaman yang kamu cari sudah dipindahkan, dihapus,
+        atau mungkin belum pernah ada. Coba kembali ke beranda atau cek URL-nya.
+      </p>
+
+      <a href="https://amatide.github.io/portfolio-editama/" class="btn btn-primary">
+        🏠 Kembali ke Beranda
+      </a>
+      <a href="https://amatide.github.io/portfolio-editama/#contact" class="btn btn-outline">
+        📬 Hubungi Saya
+      </a>
+    </div>
+
+    <p style="font-size:.8rem; margin-top:1.5rem; margin-bottom:0;">
+      editama.web.id · Health Information Professional & Tech Enthusiast
+    </p>
+  </div>
+
+</body>
+</html>
