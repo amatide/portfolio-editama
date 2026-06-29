@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editama Mufti Islahuddin — Health Info Professional</title>
+  <title>Editama Mufti Islahuddin – Health Information Professional</title>
   <meta name="description" content="Portofolio profesional Editama Mufti Islahuddin - Health Information Professional, Tech Enthusiast, dan Digital Health Explorer dari Indonesia." />
   <meta name="author" content="Editama Mufti Islahuddin" />
   <meta name="keywords" content="Editama Mufti Islahuddin, Health Information, Rekam Medis, ICD-10, EMR, Digital Health, Puskesmas Tersono, Hermina Pekalongan, Poltekkes Kemenkes Semarang, Portfolio, Healthcare IT" />
@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://editama.my.id/" />
   <meta property="og:title" content="Editama Mufti Islahuddin | Health Information Professional" />
   <meta property="og:description" content="Profesional Rekam Medis & Informasi Kesehatan dengan passion di digital health, AI, dan inovasi sistem informasi modern." />
-  <meta property="og:image" content="https://editama.my.id/og-image.jpg" />
+  <meta property="og:image" content="https://www.editama.my.id/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Editama Mufti Islahuddin - Health Information Professional" />
@@ -615,7 +615,29 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
-  </style>
+  
+    /* ==== Responsive Design ==== */
+    @media (max-width: 768px) {
+      /* Reduce hero padding and font sizes */
+      #hero { padding-top: 50px; min-height: 80vh; }
+      .hero-title { font-size: 2rem; }
+      .hero-subtitle { font-size: 1rem; }
+      .nav-links { gap: .2rem; }
+      .nav-links a { font-size: .8rem; padding: .3rem .6rem; }
+      .section { padding: 3rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      /* Mobile‑first tweaks */
+      .hamburger { display: flex; }
+      .nav-links { display: none; }
+      .mobile-menu a { font-size: 1.5rem; }
+      .hero-bg, .hero-gradient { display: none; }
+      #hero { flex-direction: column; text-align: center; }
+      .hero-content { margin: 0 auto; }
+      .hero-img { width: 80%; margin: 1.5rem auto 0; }
+      .section { padding: 2rem .5rem; }
+    }
+    </style>
 </head>
 <body>
 

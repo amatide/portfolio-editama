@@ -608,7 +608,29 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
-  </style>
+  
+    /* ==== Responsive Design ==== */
+    @media (max-width: 768px) {
+      /* Reduce hero padding and font sizes */
+      #hero { padding-top: 50px; min-height: 80vh; }
+      .hero-title { font-size: 2rem; }
+      .hero-subtitle { font-size: 1rem; }
+      .nav-links { gap: .2rem; }
+      .nav-links a { font-size: .8rem; padding: .3rem .6rem; }
+      .section { padding: 3rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      /* Mobile‑first tweaks */
+      .hamburger { display: flex; }
+      .nav-links { display: none; }
+      .mobile-menu a { font-size: 1.5rem; }
+      .hero-bg, .hero-gradient { display: none; }
+      #hero { flex-direction: column; text-align: center; }
+      .hero-content { margin: 0 auto; }
+      .hero-img { width: 80%; margin: 1.5rem auto 0; }
+      .section { padding: 2rem .5rem; }
+    }
+    </style>
 </head>
 <body>
 
