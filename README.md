@@ -129,7 +129,7 @@ Buka `http://localhost:8080` di browser.
 
 ## 📄 License
 
-MIT © 2024 Editama Mufti Islahuddin
+MIT © 2026 Editama Mufti Islahuddin
 
 Lihat file [LICENSE](LICENSE) untuk detail lengkap.
 
