@@ -12,11 +12,14 @@
 
 ## 🌐 Live Website
 
-🔗 **https://editama.my.id**
+| Versi | URL |
+|-------|-----|
+| 🇮🇩 **Indonesia** | https://editama.my.id/id/ |
+| 🇬🇧 **English** | https://editama.my.id/en/ |
+| 🌐 **Pemilih Bahasa** | https://editama.my.id/ |
+| 🔗 **Fallback** | https://amatide.github.io/portfolio-editama/ |
 
-🔗 **Fallback:** https://amatide.github.io/portfolio-editama/
-
-> Loaded via **GitHub Pages**, served on custom domain `editama.my.id` (registered at Jagoan Hosting).
+> Loaded via **GitHub Pages**, served on custom domain `editama.my.id` (registered at Jagoan Hosting). Root `/` otomatis redirect ke `/id/`.
 
 ---
 
@@ -28,10 +31,13 @@ Portofolio profesional **single-page HTML murni** yang menampilkan profil, penga
 - 🎯 Tema gelap/terang mengikuti preferensi sistem
 - ⚡ Smooth scroll + reveal animation
 - 📱 Responsif mobile & desktop
-- 🌐 Toggle bahasa Indonesia ↔ English
+- 🌐 **Bilingual** — versi Indonesia 🇮🇩 & English 🇬🇧 (pilih di halaman utama)
 - 🎨 Glassmorphism + modern UI
 - ✨ Foto profil circular + custom favicon
-- 📄 Custom 404 page
+- 📄 Custom 404 page (bilingual + animasi)
+- 🌊 Animated background (orbs, scanline, floating icons)
+- 🔍 SEO meta tags + Open Graph + Twitter Card
+- 📊 Plausible Analytics (GDPR-friendly, no cookies)
 
 ---
 
@@ -51,19 +57,36 @@ Portofolio profesional **single-page HTML murni** yang menampilkan profil, penga
 
 ```
 portfolio-editama/
-├── index.html              # Versi Indonesia (primary)
-├── index-en.html           # Versi English (fallback)
-├── 404.html                # Custom 404 page
+├── index.html              # Language selector (root redirect page)
+├── 404.html                # Custom 404 page (bilingual, animated)
 ├── README.md               # Dokumentasi repo
 ├── LICENSE                 # MIT License
 ├── .gitignore              # Ignore list
 ├── CNAME                   # Custom domain config
-├── favicon.png             # Favicon (512x512)
-├── favicon.ico             # Multi-size ico (16/32/48/64)
-├── favicon-32x32.png       # Browser tab
-├── apple-touch-icon.png    # iOS home screen
-├── photo.png               # Foto profil (circular)
-└── photo_hero.jpg          # Background hero photo
+│
+├── id/                     # 🇮🇩 Indonesian version
+│   ├── index.html          # Homepage (Bahasa Indonesia)
+│   ├── 404.html            # 404 Indonesian
+│   ├── photo.png           # Foto profil
+│   ├── photo_hero.jpg      # Hero background
+│   ├── og-image.jpg        # Open Graph image
+│   ├── favicon.png         # Favicon 512x512
+│   ├── favicon.ico         # ICO multi-size
+│   ├── favicon-32x32.png   # Tab icon
+│   └── apple-touch-icon.png
+│
+├── en/                     # 🇬🇧 English version
+│   ├── index.html          # Homepage (English)
+│   ├── 404.html            # 404 English
+│   ├── photo.png           # Foto profil
+│   ├── photo_hero.jpg      # Hero background
+│   ├── og-image.jpg        # Open Graph image
+│   ├── favicon.png         # Favicon 512x512
+│   ├── favicon.ico         # ICO multi-size
+│   ├── favicon-32x32.png   # Tab icon
+│   └── apple-touch-icon.png
+│
+└── og-image.jpg            # Shared OG image (root)
 ```
 
 ---
@@ -72,8 +95,9 @@ portfolio-editama/
 
 ### Opsi 1: Buka langsung di browser
 Kunjungi salah satu:
-- 🔗 https://editama.my.id (primary)
-- 🔗 https://amatide.github.io/portfolio-editama/
+- 🌐 https://editama.my.id/ — pilih bahasa
+- 🇮🇩 https://editama.my.id/id/ — Indonesia
+- 🇬🇧 https://editama.my.id/en/ — English
 
 ### Opsi 2: Jalankan lokal
 ```bash
@@ -81,14 +105,15 @@ git clone https://github.com/amatide/portfolio-editama.git
 cd portfolio-editama
 python3 -m http.server 8080
 ```
-Buka `http://localhost:8080` di browser.
+Buka `http://localhost:8080` → pilih bahasa → redirect otomatis.
 
 ### Opsi 3: Customize untuk dirimu sendiri
 1. Fork repo
-2. Edit `index.html` (sesuaikan nama, pengalaman, dll)
-3. Ganti `photo.png` dengan fotomu
-4. Ganti `favicon.png` dengan logomu
-5. Push ke `gh-pages` branch → aktifkan Pages di Settings
+2. Edit `id/index.html` (Indonesia) dan `en/index.html` (English)
+3. Ganti `id/photo.png` & `en/photo.png` dengan fotomu
+4. Ganti `id/favicon.png` & `en/favicon.png` dengan logomu
+5. Update OG image (`id/og-image.jpg` / `en/og-image.jpg`) untuk share sosial
+6. Push ke `main` → GitHub Pages otomatis build
 
 ---
 
@@ -100,16 +125,20 @@ Buka `http://localhost:8080` di browser.
 | 📧 **Email** | [emailkerjanya@duck.com](mailto:emailkerjanya@duck.com) |
 | 💻 **GitHub** | [github.com/amatide](https://github.com/amatide) |
 | 📷 **Instagram** | [@amatide_8](https://instagram.com/amatide_8) |
-| 🌐 **Portfolio** | [editama.my.id](https://editama.my.id) |
+| 🌐 **Portfolio ID** | [editama.my.id/id/](https://editama.my.id/id/) |
+| 🌐 **Portfolio EN** | [editama.my.id/en/](https://editama.my.id/en/) |
 
 ---
 
 ## 🎨 Design Highlights
 
 - **Tema default:** Dark mode navy + cyan accent
-- **Animasi:** Scroll reveal fade-up + hover effects
+- **Animasi:** Scroll reveal fade-up + hover effects + background particles
+- **404 page:** Glassmorphism card + animated orbs + scanline + glitch effect
 - **Icons:** Inline emoji untuk performance optimal
-- **Photo:** Circular crop 591×591, transparent background
+- **Photo:** Circular crop, transparent background
+- **Responsive:** Mobile-first, hamburger menu, touch-friendly
+- **Accessibility:** Semantic HTML landmarks, ARIA labels, prefers-reduced-motion
 
 ---
 
@@ -135,4 +164,4 @@ Lihat file [LICENSE](LICENSE) untuk detail lengkap.
 
 ---
 
-> **_"Profesional di Persimpangan Healthcare & Technology — Berpengalaman di bidang rekam medis dan layanan kesehatan dengan pemahaman mendalam tentang pengelolaan data pasien, dokumentasi medis, dan sistem informasi kesehatan."_**
+> _"Profesional di Persimpangan Healthcare & Technology — Berpengalaman di bidang rekam medis dan layanan kesehatan dengan pemahaman mendalam tentang pengelolaan data pasien, dokumentasi medis, dan sistem informasi kesehatan."_
