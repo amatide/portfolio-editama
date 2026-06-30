@@ -7,6 +7,13 @@
   <meta name="description" content="Portofolio profesional Editama Mufti Islahuddin - Health Information Professional, Tech Enthusiast, dan Digital Health Explorer dari Indonesia." />
   <meta name="author" content="Editama Mufti Islahuddin" />
   <meta name="keywords" content="Editama Mufti Islahuddin, Health Information, Rekam Medis, ICD-10, EMR, Digital Health, Puskesmas Tersono, Hermina Pekalongan, Poltekkes Kemenkes Semarang, Portfolio, Healthcare IT" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#060d1a" />
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -638,6 +645,34 @@
       .section { padding: 2rem .5rem; }
     }
     </style>
+
+  <!-- Schema.org JSON-LD for Google Rich Snippet -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Editama Mufti Islahuddin",
+    "url": "https://editama.my.id",
+    "jobTitle": "Health Information Professional",
+    "description": "Profesional Rekam Medis & Informasi Kesehatan dengan passion di digital health, AI, dan inovasi sistem informasi modern.",
+    "image": "https://editama.my.id/id/photo.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/editama",
+      "https://github.com/amatide",
+      "https://instagram.com/amatide_8"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ID",
+      "addressRegion": "Jawa Tengah"
+    },
+    "alumniOf": "Poltekkes Kemenkes Semarang",
+    "worksFor": {
+      "@type": "GovernmentOrganization",
+      "name": "Puskesmas Tersono"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -726,7 +761,7 @@
         <div class="hero-avatar-ring"></div>
         <div class="avatar-glow"></div>
         <img src="photo.png" alt="Portrait of Editama Mufti Islahuddin – Health Information Professional"
-             style="display:block;" />
+             style="display:block;" loading="lazy" />
         <div class="hero-avatar-placeholder" style="display:none;">EMI</div>
       </div>
     </div>
