@@ -1059,7 +1059,9 @@
         </div>
       </div>
       <div class="contact-form reveal reveal-delay-2">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/xeeblevo" method="POST">
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nama</label>
@@ -1078,15 +1080,13 @@
             <label for="message">Pesan</label>
             <textarea id="message" name="message" placeholder="Tulis pesan atau pertanyaan Anda..." required></textarea>
           </div>
-          <button type="submit" class="form-submit">Kirim Pesan →</button>
+          <button type="submit" class="form-submit" id="submitBtn">Kirim Pesan →</button>
           <p class="form-note" id="formNote"></p>
         </form>
       </div>
     </div>
   </div>
 </section>
-
-</main>
 
 </main>
 
@@ -1201,17 +1201,30 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// Contact form
+// Contact form — Formspree AJAX
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     const note = document.getElementById('formNote');
-    if (note) {
-      note.textContent = 'Message sent successfully!';
-      note.style.color = 'var(--accent)';
-    }
-    form.reset();
+    const btn = document.getElementById('submitBtn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Mengirim…'; }
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(res => {
+      if (res.ok) {
+        if (note) { note.textContent = '✅ Pesan terkirim! Saya akan segera merespons.'; note.style.color = 'var(--accent)'; }
+        form.reset();
+      } else {
+        if (note) { note.textContent = 'Gagal mengirim. Coba lagi atau hubungi via email.'; note.style.color = '#ff6b6b'; }
+      }
+    }).catch(() => {
+      if (note) { note.textContent = 'Terjadi kesalahan. Coba lagi nanti.'; note.style.color = '#ff6b6b'; }
+    }).finally(() => {
+      if (btn) { btn.disabled = false; btn.textContent = 'Kirim Pesan →'; }
+    });
   });
 }
 
